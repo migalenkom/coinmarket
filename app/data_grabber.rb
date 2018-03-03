@@ -1,5 +1,5 @@
 # run every 10 minutes */10 * * * *
-require './app/data_record.rb'
+require_relative 'data_record.rb'
 
 class DataGrabber < DataRecord
 

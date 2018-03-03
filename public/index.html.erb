@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <title>conimarket</title>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="images/style.css">
+  </head>
+  <body>
+    <table class="table" id="currencies">
+      <thead>
+        <tr role="row">
+          <th >#</th>
+          <th id="th-name">Name</th>
+          <th id="th-marketcap">Market Cap</th>
+          <th id="th-price">Price</th>
+          <th id="th-totalsupply">Circulating Supply</th>
+          <th id="th-change">Change (24h)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @currencies.each_with_index do |el,index| %>
+          <tr>
+            <td><%=index+1%></td>
+            <td><%=el.name%></td>
+            <td><%=el.market_cap_usd %></td>
+            <td><%=el.price_usd%></td>
+            <td><%=el.total_supply%></td>
+            <td>Hello</td>
+          </tr>
+        <% end %>
+        <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+      </body>
+    </html>

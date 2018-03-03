@@ -1,3 +1,4 @@
+require_relative 'ext/numeric.rb'
 require_relative 'app/data_loader.rb'
 require_relative 'app/page_builder.rb'
 

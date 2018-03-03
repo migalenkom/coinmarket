@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="images/style.css">
   </head>
   <body>
-    <table class="table" id="currencies">
-      <thead>
+    <h3>CoinMarket</h3>
+    <h6><%=Time.at(@currencies.first.last_update).strftime("%F %T")%></h6>
+    <table class="table tablesorter table-bordered table-hover table-sm" id="currencies">
+      <thead class="thead">
         <tr role="row">
           <th >#</th>
           <th id="th-name">Name</th>
           <th id="th-marketcap">Market Cap</th>
           <th id="th-price">Price</th>
+          <th id="th-price">Price (avg)</th>
           <th id="th-totalsupply">Circulating Supply</th>
           <th id="th-change">Change (24h)</th>
         </tr>
@@ -22,12 +25,17 @@
           <tr>
             <td><%=index+1%></td>
             <td><%=el.name%></td>
-            <td><%=el.market_cap_usd %></td>
-            <td><%=el.price_usd%></td>
-            <td><%=el.total_supply%></td>
-            <td>Hello</td>
+            <td><%=el.market_cap_usd.to_currency %></td>
+            <td><%=el.price_usd.to_currency%></td>
+            <td><%=el.avg_price.to_currency%></td>
+            <td><%=el.total_supply.to_currency%></td>
+            <td class="<%=el.delta < 0 ? 'negative_change': 'positive_change' %>">
+              <%=el.delta.to_currency%>
+            </td>
           </tr>
         <% end %>
         <script type="text/javascript" src="js/jquery-3.2.1.slim.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
       </body>
     </html>

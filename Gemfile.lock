@@ -10,6 +10,7 @@ GEM
       method_source (~> 0.9.0)
     rack (2.0.4)
     sequel (5.6.0)
+    webrick (1.4.2)
     whenever (0.10.0)
       chronic (>= 0.6.3)
 
@@ -21,6 +22,7 @@ DEPENDENCIES
   pry
   rack
   sequel
+  webrick
   whenever
 
 BUNDLED WITH

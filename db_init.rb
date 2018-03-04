@@ -1,7 +1,7 @@
 require 'sequel'
 DB = Sequel.connect("mysql2://#{ARGV[0]}:#{ARGV[1]}@localhost:3306/")
-DB.run("create database IF NOT EXISTS conimarket")
-DB.run("use conimarket")
+DB.run("create database IF NOT EXISTS coinmarket")
+DB.run("use coinmarket")
 
 unless DB.table_exists?(:currencies)
   DB.create_table :currencies, :if_exists=>true do

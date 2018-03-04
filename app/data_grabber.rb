@@ -1,5 +1,6 @@
 # run every 10 minutes */10 * * * *
 require_relative 'data_record.rb'
+require 'yaml'
 
 class DataGrabber < DataRecord
 
@@ -31,4 +32,5 @@ class DataGrabber < DataRecord
    end
  end
 end
-DataGrabber.new.grab(ARGV[0])
+conf = YAML.load_file("#{File.expand_path('../config/database.yml', File.dirname(__FILE__))}")
+DataGrabber.new(conf["username"], conf["password"]).grab(ARGV[0])

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <title>conimarket</title>
+  <title>coinmarket</title>
   <head>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="images/style.css">
   </head>
   <body>
     <h3>CoinMarket</h3>
-    <h6><%=Time.at(@currencies.first.last_update).strftime("%F %T")%></h6>
+    <h6><%=Time.at(@currencies.first&.last_update || 0)&.strftime("%F %T")%></h6>
     <table class="table tablesorter table-bordered table-hover table-sm" id="currencies">
       <thead class="thead">
         <tr role="row">
